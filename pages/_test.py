@@ -39,14 +39,20 @@ X_test_scaled = sc_X.transform(X_test)
 # Predict the future prices
 y_pred_scaled = svr.predict(X_test_scaled)
 
-# Rescale the predicted prices
-y_pred = sc_y.inverse_transform(y_pred_scaled)
+# Rescale the predicted prices (reshaping the array to 2D)
+y_pred = sc_y.inverse_transform(y_pred_scaled.reshape(-1, 1))
 
 # Visualize the data and the predicted prices
 st.subheader("Cryptocurrency Price Prediction using Support Vector Regression (SVR)")
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(crypto_data['Close'], label='Actual Price')
-ax.plot(np.concatenate([crypto_data['Close'], y_pred]), label='Predicted Price')
+
+# Create the full plot data correctly
+predicted_plot_data = np.empty((len(crypto_data) + len(y_pred), 1))
+predicted_plot_data[:] = np.nan
+predicted_plot_data[len(crypto_data):] = y_pred
+
+ax.plot(predicted_plot_data, label='Predicted Price')
 ax.set_xlabel('Time')
 ax.set_ylabel('Price')
 ax.legend()

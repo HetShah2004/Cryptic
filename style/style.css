@@ -1,36 +1,41 @@
-
-
 img {
   border: 2px solid #ff4040;
   border-radius: 4px;
   padding: 5px;
   width: 300px;
-  }
+}
 
+/* main file ka css */
+.big-font {
+  font-size:60px !important;
+  color: #ff963f;
+}
 
-  /* main file ka css */
-  .big-font {
-    font-size:60px !important;
-    color: #ff963f;
-    
-  }
+p {
+  font-size: 30px !important;
+}
 
-  p{
-    font-size: 30px !important;
+strong {
+  font-size: 70px !important;
+  color: #ff963f;
+}
 
-  }
+em {
+  font-size: 30px !important;
+  color: #fcff37;
+}
 
-  strong{
-    font-size: 70px !important;
-    color: #ff963f;
-  }
-  
-  em{
-    font-size: 30px !important;
-    color: #fcff37;
-    
-  }
-  
+/* --- Custom styling for the multiselect widget --- */
 
+/* Style for the selected crypto "pills" */
+div[data-baseweb="tag"] {
+    background-color: #ff963f !important; /* A color that matches your theme */
+    color: #1E1E1E !important; /* Dark text for contrast */
+    border-radius: 8px !important;
+    font-weight: 500;
+}
 
-   
+/* Style for the 'x' to remove a pill */
+span[data-baseweb="tag"] > span {
+    color: #1E1E1E !important;
+}
