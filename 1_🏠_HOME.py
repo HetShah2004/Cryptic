@@ -4,6 +4,8 @@ import pandas as pd
 from PIL import Image
 from streamlit_lottie import st_lottie
 import requests
+import streamlit as st
+
 
 # --- Page Configuration ---
 st.set_page_config(page_title="CRYPTO WEB-APP", page_icon="🪙", layout="wide")
